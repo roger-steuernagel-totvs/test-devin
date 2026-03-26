@@ -14,6 +14,6 @@ public class GreetingController {
 
     @GetMapping("/echo/{message}")
     public String echo(@PathVariable String message) {
-        return "HI " + message;
+        return "HELLO " + message;
     }
 }

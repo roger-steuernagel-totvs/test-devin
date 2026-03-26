@@ -26,6 +26,6 @@ class GreetingControllerTest {
     void echoEndpointReturnsHiPrefixed() throws Exception {
         mockMvc.perform(get("/echo/Roger"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("HI Roger"));
+                .andExpect(content().string("HELLO Roger"));
     }
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+               xmlns:s="library://ns.adobe.com/flex/spark"
+               xmlns:mx="library://ns.adobe.com/flex/mx"
+               minWidth="500" minHeight="300"
+               creationComplete="creationCompleteHandler(event)">
+
+    <fx:Script>
+        <![CDATA[
+            import mx.events.FlexEvent;
+            // Import the ActionScript file with the logic
+            import com.example.logic.AppLogic;
+            
+            // Instance of the ActionScript class
+            private var logic:AppLogic = new AppLogic();
+
+            // Handler for when the application is ready
+            private function creationCompleteHandler(event:FlexEvent):void {
+                logic.initialize(logArea);
+                logic.writeToLog("Application initialized.");
+            }
+
+            // Handler for the button click event
+            private function buttonClickHandler(event:MouseEvent):void {
+                logic.writeToLog("Button clicked!");
+            }
+        ]]>
+    </fx:Script>
+
+    <s:VGroup padding="10">
+        <s:Button label="Click Me" click="buttonClickHandler(event)" />
+        <s:TextArea id="logArea" width="480" height="250" editable="false" />
+    </s:VGroup>
+
+</s:Application>
